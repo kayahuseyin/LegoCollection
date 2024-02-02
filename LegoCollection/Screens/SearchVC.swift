@@ -27,7 +27,7 @@ class SearchVC: UIViewController {
     
     @objc func pushSetListVC() {
         guard isThemeSelected else {
-            print("No thema") // ALERT EKLENECEK
+            presentLCAlertOnMainThread(title: "Theme Not Selected", message: "Please Select a Theme", buttonTitle: "OK")
             return
         }
         let setListVC = SetListVC()
