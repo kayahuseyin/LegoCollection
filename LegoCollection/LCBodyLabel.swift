@@ -18,6 +18,12 @@ class LCBodyLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
+    init(textAlignment: NSTextAlignment) {
+        super.init(frame: .zero)
+        self.textAlignment = textAlignment
+        configure()
+    }
+    
     private func configure() {
         textColor = .secondaryLabel
         font = UIFont.preferredFont(forTextStyle: .body)
