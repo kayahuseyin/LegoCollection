@@ -15,6 +15,15 @@ class SetListVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        
+        NetworkManager.shared.getSets { sets, errorMessage in
+            guard let sets = sets else {
+                print(sets)
+                print(errorMessage)
+                self.presentLCAlertOnMainThread(title: "Bad stuff happened", message: "olmadi be knk", buttonTitle: "OK")
+                return
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
